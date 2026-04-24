@@ -4,20 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Neostat - konsaltingska agencija specijalizovana za poslovnu transformaciju putem veštačke inteligencije i automatizacije procesa." />
-  <meta name="keywords" content="AI, veštačka inteligencija, business transformation, automatizacija, analitika podataka, Neostat" />
   <title>Neostat | Transformacija vašeg poslovanja uz AI</title>
+  <!-- Theme switcher CSS -->
+  <link id="theme-style" rel="stylesheet" href="styles.css">
 
-  <!-- Eksterni stilski fajl -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Schema.org markup za SEO -->
+  <!-- Schema metadata -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Neostat",
       "url": "https://your-github-url.github.io/neostat-site",
-      "logo": "",
       "description": "Agencija specijalizovana za korišćenje veštačke inteligencije u poslovanju.",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -29,37 +26,47 @@
 </head>
 
 <body>
-  <!-- LOADER OVERLAY -->
+  <!-- LOADER -->
   <div id="loader-overlay">
     <div class="loader-spinner"></div>
   </div>
 
-  <!-- MAIN PAGE CONTENT -->
   <div id="main-content">
+    <!-- HEADER -->
     <header>
       <div class="container">
-        <img src="images/indexhtml_1.png" alt="Logo Agencije Neostat" class="logo" />
-        <nav aria-label="Glavna navigacija">
+        <img src="images/indexhtml_1.png" alt="Logo Agencije Neostat" class="logo"/>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="top-nav" id="topNav">
           <ul>
             <li><a href="#about">O Nama</a></li>
             <li><a href="#services">Usluge</a></li>
             <li><a href="#contact">Kontakt</a></li>
+            <li class="theme-toggle-li">
+              <button id="themeToggleButton" aria-label="Promeni temu">☀️/{{THEME_ICON}}</button>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- === HERO SEKCIJA SA SLIKOM U POZADINI === -->
+    <!-- HERO SECTION -->
     <section id="hero" class="fade-in-section">
-      <div class="hero-background"></div>
+      <div class="hero-background" style="background-image: url('images/indexhtml_2.png');"></div>
       <div class="container hero-content">
-        <h2>Transform Your Business with Intelligent Solutions</h2>
-        <p>Leveraging AI to unlock growth, innovation and operational excellence.</p>
-        <button onclick="location.href='#contact'" class="cta-button">Počni danas</button>
+        <h2>Transform Your Business Using AI Tools</h2>
+        <p>We help companies leverage technology to boost productivity, innovation and strategic growth.</p>
+        <button onclick="location.href='#contact'" class="cta-button">Start Now</button>
       </div>
     </section>
 
-    <!-- === ABOUT US === -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="fade-in-section" style="background:#151515;">
       <div class="container">
         <h2>O Nama</h2>
@@ -67,61 +74,61 @@
         <div class="card-grid">
           <div class="card">
             <h3>Clarity</h3>
-            <p>Jasno viđenje poslovnih podataka kroz preciznu analitiku.</p>
+            <p>Precizna analiza i interpretacija podataka za donošenje kvalitetnih odluka.</p>
           </div>
           <div class="card">
             <h3>Growth</h3>
-            <p>Razvoj skalabilnih sistema koji unapređuju performanse.</p>
+            <p>Razvoj skalabilnih sistema i strategija koje unapređuju performanse.</p>
           </div>
           <div class="card">
             <h3>Innovation</h3>
-            <p>Uspostava tehnološki relevantnih rešenja za budućnost.</p>
+            <p>Budućnost vaše kompanije osmišljena danas kroz tehnološku rešenja.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- === NAŠE USLUGE === -->
+    <!-- SERVICES SECTION -->
     <section id="services" class="fade-in-section" style="background:#1c1c1c;">
       <div class="container">
         <h2>Naše usluge</h2>
         <div class="card-grid">
           <div class="service-block card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="AI strategija ikona">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
             </svg>
             <h3>AI Strategija</h3>
             <p>Razvoj AI planova koji odgovaraju vašim ciljevima i resursima.</p>
           </div>
           <div class="service-block card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Automatizacija ikona">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="3"/>
               <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46a.55.55 0 00-.47-.28h-2.17c-.3-.24-.6-.45-.92-.61l-.68-2.2c-.1-.32-.4-.52-.72-.52h-4a.77.77 0 00-.72.52l-.68 2.2c-.32.16-.62.37-.92.61H4.5a.55.55 0 00-.47.28l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.65.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.34.64.34h2.17c.3.24.6.45.92.61l.68 2.2c.1.32.4.52.72.52h4c.32 0 .62-.2.72-.52l.68-2.2c.32-.16.62-.37.92-.61h2.17a.55.55 0 00.47-.28l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/>
             </svg>
             <h3>Automatizacija</h3>
-            <p>Rutinski zadaci inteligentno uštimani kako biste stekli više vremena.</p>
+            <p>Napravite efikasniji rad uz automatizaciju rutinskih procesa.</p>
           </div>
           <div class="service-block card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Data analytics ikona">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
             </svg>
             <h3>Analitika Podataka</h3>
-            <p>Konverzija kompleksnih podataka u prilagođene insight-e.</p>
+            <p>Transformišite brojke u smislene uvide za odlučivanje.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- === KONTAKT FORMA === -->
+    <!-- CONTACT FORM SECTION -->
     <section id="contact" class="fade-in-section" style="background:#111;">
       <div class="container">
         <h2>Kontaktirajte Nas</h2>
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
           <label for="name">Ime i Prezime <span>*</span>:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" autocomplete="name" required />
 
           <label for="email">Email Adresa <span>*</span>:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" autocomplete="email" required />
 
           <label for="service">Vrsta Usluge:</label>
           <select name="service" id="service">
@@ -131,10 +138,10 @@
             <option>Analiza Podataka</option>
           </select>
 
-          <label for="message">Poruka:</label>
-          <textarea id="message" name="message" rows="5"></textarea>
+          <label for="message">Poruka <span>*</span>:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-          <button type="submit" class="submit-btn">Pošalji Poruku</button>
+          <button type="submit">Pošalji Poruku</button>
         </form>
       </div>
     </section>
@@ -147,7 +154,7 @@
     </footer>
   </div>
 
-  <!-- JavaScript -->
+  <!-- JS SCRIPTS -->
   <script src="app.js"></script>
 </body>
 </html>
