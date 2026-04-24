@@ -31,8 +31,10 @@
   <div id="loader-overlay">
     <div class="loader-spinner"></div>
   </div>
+
   <div id="main-content">
-    <!-- Sav preostali sadržaj ide UNUTRA -->
+    <header>
+      <!-- Sav preostali sadržaj ide UNUTRA -->
     <header>  <div class="container">
       <h1>Neostat</h1>
       <nav aria-label="Glavna navigacija">
@@ -44,16 +46,17 @@
       </nav>
     </div>
     </header>
-   <section id="hero" class="fade-in-section">  <div class="container hero-content">
+   
+       <section id="hero" class="fade-in-section">  <div class="container hero-content">
       <h2>Transform Your Business with Intelligent Solutions</h2>
       <p>Leveraging AI to unlock growth, innovation and operational excellence.</p>
       <button onclick="location.href='#contact'" class="cta-button">Počni danas</button>
     </div> </section>
 
-  <script src="app.js"></script>
 </body>
-   
-  <!-- === ABOUT US === -->
+    </section>
+    <section id="about">
+      <!-- === ABOUT US === -->
   <section id="about" class="fade-in-section" style="background:#151515;">
     <div class="container">
       <h2>O Nama</h2>
@@ -73,9 +76,10 @@
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- === NAŠE USLUGE === -->
+    </section>
+    <section id="services">
+      <!-- === NAŠE USLUGE === -->
   <section id="services" class="fade-in-section" style="background:#1c1c1c;">
     <div class="container">
       <h2>Naše usluge</h2>
@@ -105,8 +109,8 @@
       </div>
     </div>
   </section>
-
-  <!-- === KONTAKT FORMA === -->
+    <section id="contact">
+     <!-- === KONTAKT FORMA === -->
   <section id="contact" class="fade-in-section" style="background:#111;">
     <div class="container">
       <h2>Kontaktirajte Nas</h2>
@@ -131,14 +135,27 @@
         <button type="submit" class="submit-btn">Pošalji Poruku</button>
       </form>
     </div>
-  </section>
-    <footer> 
+
+    </section>
+     <footer> 
     <div class="container">
       <p>&copy; <span id="currentYear"></span> Neostat. Sva prava zadržana.</p>
     </div>
   </footer>
   </div>
-  <!-- JAVASCRIPT FUNKCIONALNOSTI -->
+  <script src="app.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(() => {
+        document.getElementById("loader-overlay").style.display = "none";
+        document.getElementById("main-content").style.visibility = "visible";
+        document.body.style.display = "block";
+      }, 1000);
+    });
+  </script>
+</body>
+  <div id="main-content">
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
