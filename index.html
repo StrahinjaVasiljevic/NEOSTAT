@@ -28,8 +28,12 @@
   </script>
 </head>
 <body>
-  <header>
-    <div class="container">
+  <div id="loader-overlay">
+    <div class="loader-spinner"></div>
+  </div>
+  <div id="main-content">
+    <!-- Sav preostali sadržaj ide UNUTRA -->
+    <header>  <div class="container">
       <h1>Neostat</h1>
       <nav aria-label="Glavna navigacija">
         <ul>
@@ -39,17 +43,16 @@
         </ul>
       </nav>
     </div>
-  </header>
-
-  <!-- === HERO SEKCIJA === -->
-  <section id="hero" class="fade-in-section">
-    <div class="container hero-content">
+    </header>
+   <section id="hero" class="fade-in-section">  <div class="container hero-content">
       <h2>Transform Your Business with Intelligent Solutions</h2>
       <p>Leveraging AI to unlock growth, innovation and operational excellence.</p>
       <button onclick="location.href='#contact'" class="cta-button">Počni danas</button>
-    </div>
-  </section>
+    </div> </section>
 
+  <script src="app.js"></script>
+</body>
+   
   <!-- === ABOUT US === -->
   <section id="about" class="fade-in-section" style="background:#151515;">
     <div class="container">
@@ -129,14 +132,12 @@
       </form>
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer>
+    <footer> 
     <div class="container">
       <p>&copy; <span id="currentYear"></span> Neostat. Sva prava zadržana.</p>
     </div>
   </footer>
-
+  </div>
   <!-- JAVASCRIPT FUNKCIONALNOSTI -->
   <script src="app.js"></script>
 </body>
