@@ -2,117 +2,36 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
-  <!-- Viewport za bolju responzivnost -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neostat | Transformišemo poslovanje uz AI</title>
-  <!-- Link ka stilskom fajlu će biti kreiran kasnije -->
-  <!-- <link rel="stylesheet" href="styles.css"> -->
-  <!-- Inline stil kao privremena zamena do kraja koraka -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: white;
-    }
+  <meta name="description" content="Neostat - konsaltingska agencija specijalizovana za poslovnu transformaciju putem veštačke inteligencije i automatizacije procesa.">
+  <meta name="keywords" content="AI, veštačka inteligencija, business transformation, automatizacija, analitika podataka, Neostat">
+  <title>Neostat | Transformacija vašeg poslovanja uz AI</title>
 
-    header {
-      background-color: #111;
-      padding: 1em 2em;
-    }
+  <!-- Eksterni stilski fajl -->
+  <link rel="stylesheet" href="styles.css">
 
-    nav ul {
-      display: flex;
-      justify-content: flex-end;
-      list-style-type: none;
-      gap: 20px;
+  <!-- Schema.org markup za SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Neostat",
+      "url": "https://your-github-url.github.io/neostat-site",
+      "logo": "",
+      "description": "Agencija specijalizovana za korišćenje veštačke inteligencije u poslovanju.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Sales",
+        "email": "info@example.com"
+      }
     }
-
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #a020f0;
-    }
-
-    section {
-      padding: 60px 20px;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h1, h2, h3 {
-      font-weight: 600;
-    }
-
-    button.cta-button {
-      background: linear-gradient(90deg, #a020f0, #00f7ff);
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      cursor: pointer;
-      color: black;
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-
-    button.cta-button:hover {
-      transform: scale(1.05);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-left: 4px solid #a020f0;
-      border-radius: 8px;
-      text-align: center;
-    }
-    
-    .service-block svg {
-      width: 40px;
-      height: 40px;
-      fill: #00f7ff;
-    }
-
-    form#contactForm input,
-    form#contactForm select,
-    form#contactForm textarea {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: 1px solid #333;
-      background: #1c1c1c;
-      color: white;
-    }
-
-    footer {
-      background-color: black;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+  </script>
 </head>
 <body>
   <header>
     <div class="container">
       <h1>Neostat</h1>
-      <nav>
+      <nav aria-label="Glavna navigacija">
         <ul>
           <li><a href="#about">O Nama</a></li>
           <li><a href="#services">Usluge</a></li>
@@ -123,59 +42,61 @@
   </header>
 
   <!-- === HERO SEKCIJA === -->
-  <section id="hero" style="text-align:center;background:#111;padding:80px 20px;">
-    <div class="container">
+  <section id="hero" class="fade-in-section">
+    <div class="container hero-content">
       <h2>Transform Your Business with Intelligent Solutions</h2>
       <p>Leveraging AI to unlock growth, innovation and operational excellence.</p>
-      <a href="#contact" class="cta-button">Počni danas</a> <!-- CTA button -->
+      <button onclick="location.href='#contact'" class="cta-button">Počni danas</button>
     </div>
   </section>
 
   <!-- === ABOUT US === -->
-  <section id="about" style="background:#151515;">
+  <section id="about" class="fade-in-section" style="background:#151515;">
     <div class="container">
       <h2>O Nama</h2>
       <p>Neostat je ekskluzivna agencija koja pomaže kompanijama da napreduju kroz korišćenje veštačke inteligencije. Naš tim stručnjaka pruža personalizovana rešenja za digitalnu transformaciju i automatizaciju procesa.</p>
-
       <div class="card-grid">
         <div class="card">
           <h3>Clarity</h3>
-          <p>Jasno viđenje vaših poslovnih podataka kroz preciznu analitiku.</p>
+          <p>Jasno viđenje poslovnih podataka kroz preciznu analitiku.</p>
         </div>
         <div class="card">
           <h3>Growth</h3>
-          <p>Izgradnja skalabilnih sistema i strategija koje unapređuju performanse.</p>
+          <p>Razvoj skalabilnih sistema koji unapređuju performanse.</p>
         </div>
         <div class="card">
           <h3>Innovation</h3>
-          <p>Uspostava tehnološki relevantnih rješenja za budućnost vaše kompanije.</p>
+          <p>Uspostava tehnološki relevantnih rešenja za budućnost.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- === SERVICES === -->
-  <section id="services" style="background:#1c1c1c;">
+  <!-- === NAŠE USLUGE === -->
+  <section id="services" class="fade-in-section" style="background:#1c1c1c;">
     <div class="container">
       <h2>Naše usluge</h2>
-      
       <div class="card-grid">
         <div class="service-block card">
-          <!-- SVG ikonica simulacija -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="AI strategija ikona">
+            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+          </svg>
           <h3>AI Strategija</h3>
           <p>Razvoj AI planova koji odgovaraju vašim ciljevima i resursima.</p>
         </div>
-        
         <div class="service-block card">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46a.55.55 0 00-.47-.28h-2.17c-.3-.24-.6-.45-.92-.61l-.68-2.2c-.1-.32-.4-.52-.72-.52h-4a.77.77 0 00-.72.52l-.68 2.2c-.32.16-.62.37-.92.61H4.5a.55.55 0 00-.47.28l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.65.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.34.64.34h2.17c.3.24.6.45.92.61l.68 2.2c.1.32.4.52.72.52h4c.32 0 .62-.2.72-.52l.68-2.2c.32-.16.62-.37.92-.61h2.17a.55.55 0 00.47-.28l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Automatizacija ikona">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46a.55.55 0 00-.47-.28h-2.17c-.3-.24-.6-.45-.92-.61l-.68-2.2c-.1-.32-.4-.52-.72-.52h-4a.77.77 0 00-.72.52l-.68 2.2c-.32.16-.62.37-.92.61H4.5a.55.55 0 00-.47.28l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.65.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.34.64.34h2.17c.3.24.6.45.92.61l.68 2.2c.1.32.4.52.72.52h4c.32 0 .62-.2.72-.52l.68-2.2c.32-.16.62-.37.92-.61h2.17a.55.55 0 00.47-.28l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/>
+          </svg>
           <h3>Automatizacija</h3>
-          <p>Rutinski zadaci, inteligentno uštimani kako bi ste stekli više vremena.</p>
+          <p>Rutinski zadaci inteligentno uštimani kako biste stekli više vremena.</p>
         </div>
-
         <div class="service-block card">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          <h3>Analtika podataka</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Data analytics ikona">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+          <h3>Analitika Podataka</h3>
           <p>Konverzija kompleksnih podataka u prilagođene insight-e.</p>
         </div>
       </div>
@@ -183,28 +104,28 @@
   </section>
 
   <!-- === KONTAKT FORMA === -->
-  <section id="contact" style="background:#111;">
+  <section id="contact" class="fade-in-section" style="background:#111;">
     <div class="container">
-      <h2>Kontaktirajte nas</h2>
+      <h2>Kontaktirajte Nas</h2>
       <form id="contactForm" onsubmit="handleSubmit(event)">
-        <label for="name">Ime i prezime <span>*</span>:</label>
+        <label for="name">Ime i Prezime <span>*</span>:</label>
         <input type="text" id="name" name="name" required />
 
-        <label for="email">Email adresa <span>*</span>:</label>
+        <label for="email">Email Adresa <span>*</span>:</label>
         <input type="email" id="email" name="email" required />
 
-        <label for="service">Vrsta usluge:</label>
+        <label for="service">Vrsta Usluge:</label>
         <select name="service" id="service">
           <option value="" disabled selected>Izaberite...</option>
-          <option>AI Strategija Savetovanje</option>
+          <option>AI Strategija</option>
           <option>Poslovna Automatizacija</option>
           <option>Analiza Podataka</option>
         </select>
 
-        <label for="message">Vaša poruka:</label>
+        <label for="message">Poruka:</label>
         <textarea id="message" name="message" rows="5"></textarea>
 
-        <button type="submit">Pošalji upit</button>
+        <button type="submit" class="submit-btn">Pošalji Poruku</button>
       </form>
     </div>
   </section>
@@ -212,14 +133,11 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>&copy; 2023– <!-- Dinamička generacija godina dolazi ovde --><span id="currentYear"></span> Neostat. Sva prava zadržana.</p>
+      <p>&copy; <span id="currentYear"></span> Neostat. Sva prava zadržana.</p>
     </div>
   </footer>
 
-  <!-- Placeholder za JS kod koji automatski popunjava godinu -->
-  <script>
-    // Dinamički prikaz godine - JavaScript će se dodati kasnije.
-    // document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
+  <!-- JAVASCRIPT FUNKCIONALNOSTI -->
+  <script src="app.js"></script>
 </body>
 </html>
