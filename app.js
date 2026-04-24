@@ -1,21 +1,22 @@
-// == 1. SAKRIJ LOADER KADA SE STRANICA UCITA ==
+// == 1. SAKRIJ LOADER NAKON MINIMUM 1 SEKUNDE ==
 window.addEventListener("load", function () {
   setTimeout(() => {
     const loader = document.getElementById("loader-overlay");
     if (loader) {
       loader.classList.add("hidden");
     }
-  }, 1000); // loader ostaje vidljiv bar 1 sekundu
+  }, 1000); // Uvek čeka bar 1 sekundu
 });
 
-// == 2. POSTAVI TRENUTNU GODINU U FOOTER ==
 document.addEventListener("DOMContentLoaded", () => {
+
+  // == 2. POSTAVI TRENUTNU GODINU U FOOTER ==
   const yearSpan = document.getElementById("currentYear");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // == 3. OBSERVE SECTIONS ZA SCROLL ANIMACIJU ==
+  // == 3. SCROLL ANIMACIJA SEKCIJA (INTERSECTION OBSERVER) ==
   const sections = document.querySelectorAll("section");
   const observerOptions = {
     root: null,
@@ -36,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionObserver.observe(section);
   });
 
-  // == 4. VALIDACIJA FORME KONTAKTA ==
+  // == 4. VALIDACIJA KONTAKT FORME SA AJAX SLANJEM ==
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
-    contactForm.addEventListener("submit", function(e) {
+    contactForm.addEventListener("submit", async function(e) {
       e.preventDefault();
-      
-      // Resetuj poruke
+
+      // Reset poruka
       clearValidationMessages();
 
       let isValid = true;
@@ -62,8 +63,35 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (isValid) {
-        alert("Poruka je uspešno poslata!");
-        contactForm.reset();
+        // DISABLE SUBMIT BUTTON DURING SUBMISSION
+        const submitButton = contactForm.querySelector("button[type='submit']");
+        const originalText = submitButton.textContent;
+        submitButton.textContent = "Slanje...";
+        submitButton.disabled = true;
+
+        try {
+          const formData = new FormData(contactForm);
+          const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json"
+            }
+          });
+
+          if (response.ok) {
+            alert("Uspešno poslata poruka!");
+            contactForm.reset();
+          } else {
+            alert("Došlo je do greške pri slanju. Pokušajte ponovo kasnije.");
+          }
+        } catch (error) {
+          console.error("Greška:", error);
+          alert("Dogodila se mrežna greška. Proverite vašu konekciju.");
+        } finally {
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+        }
       }
     });
   }
@@ -95,5 +123,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const inputs = document.querySelectorAll("input, textarea, select");
     inputs.forEach(inp => inp.style.borderColor = "");
+  }
+
+  // == 5. TOGGLE DARK / LIGHT MODE WITH LOCALSTORAGE ==
+  const themeButton = document.getElementById("themeToggleButton");
+  const storedTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", storedTheme);
+  updateThemeIcon(storedTheme);
+
+  if (themeButton) {
+    themeButton.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      updateThemeIcon(newTheme);
+    });
+  }
+
+  function updateThemeIcon(theme) {
+    if (themeButton) {
+      themeButton.textContent = theme === "dark" ? "☀️" : "🌙"; // Sunce za light, mesec za dark
+    }
+  }
+
+  // == 6. HAMBURGER MENI ZA MOBILNE ==
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navList = document.getElementById("topNav");
+
+  if (mobileMenu && navList) {
+    mobileMenu.addEventListener("click", () => {
+      navList.classList.toggle("active");
+      mobileMenu.classList.toggle("is-active"); // Optional rotation effect
+    });
+
+    // Close menu if clicked outside
+    document.addEventListener("click", (event) => {
+      if (!navList.contains(event.target) && !mobileMenu.contains(event.target)) {
+        navList.classList.remove("active");
+        mobileMenu.classList.remove("is-active");
+      }
+    });
   }
 });
